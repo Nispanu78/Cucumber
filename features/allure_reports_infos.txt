@@ -1,0 +1,11 @@
+To install allure:
+
+pip install allure-behave
+
+To generate reports for the first time:
+
+behave -f allure_behave.formatter:AllureFormatter -o %allure_result_folder% ./features
+
+To visualize the report in HTML format
+
+allure serve %allure_result_folder%
