@@ -18,7 +18,7 @@ def step_impl(context):
 def step_impl(context):
     title = context.driver.title
     print("Title is " + title)
-    assert "Google" in title
+    assert "Googles" in title
 
 @then(u'I enter the text as "{search_text}"')
 def step_impl(context, search_text):
