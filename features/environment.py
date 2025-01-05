@@ -1,14 +1,19 @@
 import allure
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
 
-# This hook is executed before all scenarios
+from Utilities import configReader
+
+
 def before_scenario(context, driver):
-    context.driver = webdriver.Chrome(service=webdriver.ChromeService(ChromeDriverManager().install()))
+    if configReader.readConfig("basic info","browser") == "chrome":
+        context.driver = webdriver.Chrome(service=webdriver.ChromeService(ChromeDriverManager().install()))
 
-# This hook is executed after all scenarios
+
 def after_scenario(context, driver):
     context.driver.quit()
+
 
 def after_step(context, step):
     print()
