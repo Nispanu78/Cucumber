@@ -50,4 +50,6 @@ def step_impl(context, password):
 @then(u'I click on the submit button')
 def step_impl(context):
     context.reg.submitForm()
+    # Let's test whether the test fail as expected by asserting false
+    # assert False
     time.sleep(3)

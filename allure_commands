@@ -1,0 +1,7 @@
+To generate an allure_reports folder:
+
+behave -f allure_behave.formatter:AllureFormatter -o allure_reports/ features
+
+To generate an HTML report:
+
+allure serve allure_reports
